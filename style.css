@@ -132,14 +132,18 @@ h1 {
 .degree { color: var(--green); font-size: 1.05rem; font-weight: 500; }
 .degree-field, .location { color: var(--muted); font-weight: 400; }
 .location { font-size: 0.95rem; }
-.experience-list { padding: 0; margin: 0; list-style: none; }
-.experience-item { display: grid; grid-template-columns: 1.15fr 1.2fr 1.4fr 0.7fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); align-items: center; }
-.experience-item p { margin: 0; }
-.experience-date { color: var(--muted); font-size: 0.875rem; }
-.experience-role { font-weight: 600; color: var(--green); }
-.experience-role span { font-weight: 400; color: var(--muted); }
-.experience-institution { font-weight: 500; color: var(--ink); }
-.experience-location { font-size: 0.9rem; color: var(--muted); }
+.experience-table-wrap { width: 100%; overflow-x: auto; }
+.experience-table { width: 100%; min-width: 1000px; border-collapse: collapse; table-layout: fixed; text-align: left; }
+.experience-table th:nth-child(1) { width: 25%; }
+.experience-table th:nth-child(2) { width: 29%; }
+.experience-table th:nth-child(3) { width: 30%; }
+.experience-table th:nth-child(4) { width: 16%; }
+.experience-table th { padding: 16px 24px 16px 0; color: var(--accent); font-size: 0.875rem; font-weight: 600; }
+.experience-table td { padding: 26px 24px 26px 0; border-top: 1px solid var(--line); vertical-align: top; color: var(--ink); font-size: 0.95rem; line-height: 1.6; }
+.experience-table td:first-child, .experience-table td:last-child { color: var(--muted); white-space: nowrap; }
+.experience-table td strong { display: block; color: var(--green); font-weight: 600; }
+.experience-table td span { display: block; margin-top: 4px; color: var(--muted); }
+.experience-table th:last-child, .experience-table td:last-child { padding-right: 0; }
 section[id] { scroll-margin-top: 100px; }
 
 .about {
@@ -377,12 +381,7 @@ h3 {
   }
 }
 
-@media (max-width: 900px) {
-  .experience-item { gap: 16px; font-size: 0.9rem; }
-}
 @media (max-width: 640px) {
   .nav { flex-wrap: wrap; row-gap: 12px; }
   .degree { font-size: 0.9rem; }
-  .experience-list { overflow-x: auto; }
-  .experience-item { min-width: 760px; }
 }
