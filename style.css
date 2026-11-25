@@ -127,22 +127,19 @@ h1 {
 }
 
 .profile-details { margin-top: 24px; display: grid; justify-items: center; gap: 10px; }
-.profile-details p { margin: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
-.profile-details svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--accent); }
+.profile-details p { margin: 0; display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.profile-details p > svg { display: block; width: 1em; height: 1em; min-width: 1em; max-width: 1em; flex: 0 0 1em; color: var(--accent); }
 .degree { color: var(--green); font-size: 1.05rem; font-weight: 500; }
 .degree-field, .location { color: var(--muted); font-weight: 400; }
 .location { font-size: 0.95rem; }
-.experience-list { max-width: 1100px; padding: 0; margin: 0; list-style: none; }
-.experience-item { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 28px; padding: 30px 0; border-top: 1px solid var(--line); align-items: center; }
-.institution-mark { width: 88px; height: 88px; padding: 10px; display: grid; place-items: center; background: white; border: 1px solid var(--line); border-radius: 50%; overflow: hidden; }
-.institution-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.experience-date { margin: 0 0 8px; color: var(--muted); font-size: 0.875rem; }
-.experience-copy h3 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
-.experience-copy a { text-decoration: none; }
-.experience-copy a:hover { color: var(--accent); }
-.experience-role { margin: 10px 0 4px; font-weight: 600; color: var(--green); }
-.experience-role span { font-weight: 400; }
-.experience-location { margin: 0; font-size: 0.9rem; color: var(--muted); }
+.experience-list { padding: 0; margin: 0; list-style: none; }
+.experience-item { display: grid; grid-template-columns: 1.15fr 1.2fr 1.4fr 0.7fr; gap: 24px; padding: 26px 0; border-top: 1px solid var(--line); align-items: center; }
+.experience-item p { margin: 0; }
+.experience-date { color: var(--muted); font-size: 0.875rem; }
+.experience-role { font-weight: 600; color: var(--green); }
+.experience-role span { font-weight: 400; color: var(--muted); }
+.experience-institution { font-weight: 500; color: var(--ink); }
+.experience-location { font-size: 0.9rem; color: var(--muted); }
 section[id] { scroll-margin-top: 100px; }
 
 .about {
@@ -380,14 +377,12 @@ h3 {
   }
 }
 
+@media (max-width: 900px) {
+  .experience-item { gap: 16px; font-size: 0.9rem; }
+}
 @media (max-width: 640px) {
   .nav { flex-wrap: wrap; row-gap: 12px; }
-  .degree { font-size: 0.95rem; }
-  .degree-field { display: block; margin-top: 3px; }
-  .experience-item { grid-template-columns: 60px minmax(0, 1fr); gap: 16px; align-items: start; }
-  .institution-mark { width: 60px; height: 60px; padding: 7px; }
-  .experience-role span { display: block; margin-top: 4px; }
+  .degree { font-size: 0.9rem; }
+  .experience-list { overflow-x: auto; }
+  .experience-item { min-width: 760px; }
 }
-
-.institution-mark img[src$="cas.png"] { object-fit: cover; object-position: left center; }
-.institution-mark img[src$="iap.png"] { object-fit: cover; object-position: left center; transform: scale(1.35); transform-origin: left center; }
