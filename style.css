@@ -385,3 +385,20 @@ h3 {
   .nav { flex-wrap: wrap; row-gap: 12px; }
   .degree { font-size: 0.9rem; }
 }
+
+/* Give full dates and institution names room on desktop. */
+@media (min-width: 901px) {
+  .experience .section-heading { max-width: none; }
+  .experience h2 { font-size: clamp(2.8rem, 4.5vw, 4.5rem); }
+  .experience-table { min-width: 1180px; }
+  .experience-table th:nth-child(1) { width: 26%; }
+  .experience-table th:nth-child(2) { width: 28%; }
+  .experience-table th:nth-child(3) { width: 31%; }
+  .experience-table th:nth-child(4) { width: 15%; }
+  .experience-table th,
+  .experience-table td { padding-right: 32px; }
+  .experience-table td { padding-top: 30px; padding-bottom: 30px; }
+  .experience-table td:first-child { white-space: normal; }
+  .experience-table th:last-child,
+  .experience-table td:last-child { padding-right: 0; }
+}
