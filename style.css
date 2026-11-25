@@ -126,13 +126,24 @@ h1 {
   font-weight: 700;
 }
 
-.affiliation {
-  max-width: 720px;
-  margin: 18px auto 0;
-  color: var(--green);
-  font-size: clamp(1rem, 2vw, 1.35rem);
-  font-weight: 700;
-}
+.profile-details { margin-top: 24px; display: grid; justify-items: center; gap: 10px; }
+.profile-details p { margin: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+.profile-details svg { width: 22px; height: 22px; flex-shrink: 0; color: var(--accent); }
+.degree { color: var(--green); font-size: 1.05rem; font-weight: 500; }
+.degree-field, .location { color: var(--muted); font-weight: 400; }
+.location { font-size: 0.95rem; }
+.experience-list { max-width: 1100px; padding: 0; margin: 0; list-style: none; }
+.experience-item { display: grid; grid-template-columns: 88px minmax(0, 1fr); gap: 28px; padding: 30px 0; border-top: 1px solid var(--line); align-items: center; }
+.institution-mark { width: 88px; height: 88px; padding: 10px; display: grid; place-items: center; background: white; border: 1px solid var(--line); border-radius: 50%; overflow: hidden; }
+.institution-mark img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.experience-date { margin: 0 0 8px; color: var(--muted); font-size: 0.875rem; }
+.experience-copy h3 { font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.15; }
+.experience-copy a { text-decoration: none; }
+.experience-copy a:hover { color: var(--accent); }
+.experience-role { margin: 10px 0 4px; font-weight: 600; color: var(--green); }
+.experience-role span { font-weight: 400; }
+.experience-location { margin: 0; font-size: 0.9rem; color: var(--muted); }
+section[id] { scroll-margin-top: 100px; }
 
 .about {
   display: grid;
@@ -150,7 +161,6 @@ h1 {
 
 .about-copy p:first-child { margin-top: 0; }
 .about-copy p:last-child { margin-bottom: 0; }
-.affiliation span { font-weight: 500; }
 .publication-group + .publication-group { margin-top: 48px; }
 .group-title { margin-bottom: 22px; font-size: clamp(2rem, 4vw, 2.8rem); }
 
@@ -369,3 +379,15 @@ h3 {
     flex-direction: column;
   }
 }
+
+@media (max-width: 640px) {
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .degree { font-size: 0.95rem; }
+  .degree-field { display: block; margin-top: 3px; }
+  .experience-item { grid-template-columns: 60px minmax(0, 1fr); gap: 16px; align-items: start; }
+  .institution-mark { width: 60px; height: 60px; padding: 7px; }
+  .experience-role span { display: block; margin-top: 4px; }
+}
+
+.institution-mark img[src$="cas.png"] { object-fit: cover; object-position: left center; }
+.institution-mark img[src$="iap.png"] { object-fit: cover; object-position: left center; transform: scale(1.35); transform-origin: left center; }
