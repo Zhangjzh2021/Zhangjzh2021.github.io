@@ -223,22 +223,14 @@ h3 {
   color: var(--muted);
 }
 
-.highlights-grid {
+.highlights-grid { display: grid; gap: 52px; }
+.highlight-group {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-template-rows: auto repeat(5, auto);
   column-gap: 24px;
-  align-items: stretch;
-}
-.highlight-group {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-template-rows: subgrid;
-  grid-row: 1 / span 6;
   min-width: 0;
 }
-.warming-group { grid-column: 1; }
-.tipping-group { grid-column: 2 / span 2; }
 .highlight-group-title {
   grid-column: 1 / -1;
   grid-row: 1;
@@ -283,9 +275,8 @@ h3 {
   .publications > .section-heading { max-width: none; }
 }
 @media (max-width: 900px) {
-  .highlights-grid { display: block; }
+  .highlights-grid { display: grid; gap: 40px; }
   .highlight-group { display: grid; grid-template-columns: 1fr; gap: 24px; }
-  .highlight-group + .highlight-group { margin-top: 40px; }
   .highlight-group-title { grid-column: auto; grid-row: auto; margin: 0; }
   .highlight-card { display: block; grid-row: auto; }
   .highlight-copy { display: block; }
